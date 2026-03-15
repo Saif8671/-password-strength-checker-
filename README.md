@@ -1,73 +1,78 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:10b981&height=200&section=header&text=Password%20Security%20Toolkit&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Real-Time%20Analysis%20%7C%20Breach%20Detection%20%7C%20ML%20Guessability&descSize=16&descAlignY=60" width="100%"/>
+
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:10b981&height=200&section=header&text=Password%20Security%20Toolkit&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Real-Time%20Analysis%20%7C%20Breach%20Detection%20%7C%20ML%20Guessability&descSize=15&descAlignY=58" width="100%"/>
+[![Live Demo](https://img.shields.io/badge/🔗%20Live%20Demo-password--scanner--tool.netlify.app-10b981?style=for-the-badge&logo=netlify&logoColor=white)](https://password-scanner-tool.netlify.app)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-password--scanner--tool.netlify.app-10b981?style=for-the-badge&logo=netlify&logoColor=white)](https://password-scanner-tool.netlify.app)
-[![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask_API-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-> Know exactly how breakable your password is —  
-> real-time strength scoring, HIBP breach lookups, crack-time estimation,  
-> and ML-powered guessability detection in one toolkit.
+![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-API-000000?style=flat-square&logo=flask&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-10b981?style=flat-square)
 
 </div>
 
 ---
 
-## 🌟 Features
-https://password-strength-checker-indol-seven.vercel.app/
-### 🔍 Core Analysis
-| Feature | Details |
-|---|---|
-| ⚡ Real-time Analysis | Instant feedback on every keystroke |
-| 🚨 HIBP Breach Detection | Cross-checks against known compromised password databases |
-| ⏱️ Crack Time Estimation | Calculates time-to-crack on modern hardware |
-| 🌍 Multi-language Dictionary | Detects common words across multiple languages |
-| 🏢 Policy Enforcement | Customizable org-level security requirement rules |
-| 🤖 ML Guessability | AI-powered weakness and pattern detection |
-| 📊 Visual Strength Meter | Block-based intuitive strength visualization |
+## Overview
 
-### 🛠️ Technical Interfaces
-| Interface | Use Case |
-|---|---|
-| 🖥️ CLI Tool | Batch processing and automation |
-| 🔌 Flask REST API | Integration with external apps and services |
-| 🌐 Web Frontend | Interactive React/HTML dashboard with live feedback |
+**Password Security Toolkit** is a multi-interface security tool that gives you a complete picture of how strong — or breakable — any password really is. It combines real-time strength scoring, Have I Been Pwned breach lookups, hardware-calibrated crack-time estimation, and ML-based pattern detection into a single deployable toolkit available as a web app, REST API, and CLI.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
-![HIBP](https://img.shields.io/badge/HaveIBeenPwned-API-10b981?style=flat&logo=security&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+### Analysis Engine
+- **Real-time scoring** — instant feedback on every keystroke, no submit needed
+- **HIBP breach detection** — checks against hundreds of millions of known compromised passwords via k-anonymity hashing (your password never leaves in plaintext)
+- **Crack time estimation** — calculates time-to-crack on modern consumer and enterprise hardware
+- **ML guessability** — scikit-learn model trained to detect dictionary substitutions, keyboard walks, and structural patterns attackers exploit
+- **Multi-language dictionary** — common word detection across major languages, not just English
+- **Policy enforcement** — configurable org-level rules for length, character classes, and expiry requirements
+- **Visual strength meter** — block-based progress indicator with per-criterion breakdown
+
+### Interfaces
+
+| Interface | Best For |
+|---|---|
+| **Web Dashboard** | Interactive use — React frontend with live feedback |
+| **Flask REST API** | Integrating analysis into external apps or CI pipelines |
+| **CLI Tool** | Batch processing password lists, automation, scripting |
 
 ---
 
-## 📂 Project Structure
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Flask 3.x (Python 3.7+) |
+| ML Model | scikit-learn |
+| Breach Lookup | Have I Been Pwned API (k-anonymity) |
+| Frontend | React + Vite |
+| Deployment | Netlify (frontend) / any WSGI host (backend) |
+
+---
+
+## Project Structure
+
 ```
 password-security-toolkit/
 ├── backend/
-│   ├── app.py                    # Flask REST API entry point
-│   ├── analyzer.py               # Core password analysis engine
-│   ├── breach_check.py           # HIBP API integration
-│   ├── crack_time.py             # Crack time estimation logic
-│   ├── ml_model.py               # ML guessability predictor
-│   ├── policy.py                 # Org policy enforcement rules
-│   └── dictionary/               # Multi-language word lists
+│   ├── app.py                # Flask REST API entry point
+│   ├── analyzer.py           # Core password analysis engine
+│   ├── breach_check.py       # HIBP API integration
+│   ├── crack_time.py         # Crack time estimation logic
+│   ├── ml_model.py           # ML guessability predictor
+│   ├── policy.py             # Org policy enforcement
+│   └── dictionary/           # Multi-language word lists
 ├── cli/
-│   └── toolkit.py                # CLI batch processing tool
+│   └── toolkit.py            # CLI batch processing tool
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── StrengthMeter.jsx # Block-based visual meter
-│   │   │   ├── BreachBadge.jsx   # HIBP result display
-│   │   │   └── MetricsDash.jsx   # Full security dashboard
+│   │   │   ├── StrengthMeter.jsx
+│   │   │   ├── BreachBadge.jsx
+│   │   │   └── MetricsDash.jsx
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   └── package.json
@@ -78,59 +83,63 @@ password-security-toolkit/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
-- Python **3.7+**
-- Node.js **16+** *(for frontend development)*
-- pip package manager
+**Prerequisites:** Python 3.7+, Node.js 16+ (frontend only), pip
 
-### 1. Clone the Repository
+### 1. Clone
+
 ```bash
 git clone https://github.com/Saif8671/password-security-toolkit.git
 cd password-security-toolkit
 ```
 
-### 2. Backend Setup
+### 2. Install backend dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Frontend Setup *(optional — for local development)*
-```bash
-npm install
-npm run dev
-```
+### 3. Run the API
 
-### 4. Run the Flask API
 ```bash
 python backend/app.py
 ```
 
-API runs at **http://localhost:5000**
+API available at `http://localhost:5000`.
 
-### 5. Run the CLI Tool
+### 4. Run the frontend *(optional)*
+
 ```bash
-# Analyze a single password
+cd frontend
+npm install
+npm run dev
+```
+
+### 5. Use the CLI
+
+```bash
+# Single password
 python cli/toolkit.py --password "MyP@ssw0rd"
 
-# Batch process from a file
+# Batch from file
 python cli/toolkit.py --file passwords.txt
 ```
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
 ### `POST /analyze`
+
 Full password security analysis.
 
-**Request:**
+**Request**
 ```json
 { "password": "MyP@ssw0rd123" }
 ```
 
-**Response:**
+**Response**
 ```json
 {
   "score": 82,
@@ -142,49 +151,66 @@ Full password security analysis.
 }
 ```
 
+---
+
 ### `POST /breach`
-HIBP breach check only.
+
+HIBP breach check only. Uses k-anonymity — only the first 5 characters of the SHA-1 hash are transmitted.
+
+**Request**
 ```json
 { "password": "password123" }
-→ { "breached": true, "count": 2478921 }
+```
+
+**Response**
+```json
+{ "breached": true, "count": 2478921 }
 ```
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
-- [ ] Browser extension for real-time password field analysis
-- [ ] Password generator with policy-aware output
-- [ ] Export audit reports (PDF / CSV)
-- [ ] Team dashboard for organization-wide policy monitoring
-- [ ] Passphrase strength analysis
-- [ ] Dark web monitoring integration
-
----
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create a branch: `git checkout -b feat/your-feature`
-3. Commit: `git commit -m "feat: describe your change"`
-4. Push and open a PR
+| Status | Feature |
+|---|---|
+| 📋 Planned | Browser extension for real-time password field analysis |
+| 📋 Planned | Policy-aware password generator |
+| 📋 Planned | Export audit reports (PDF / CSV) |
+| 📋 Planned | Organization-wide policy monitoring dashboard |
+| 📋 Planned | Passphrase entropy analysis |
+| 💡 Idea | Dark web monitoring integration |
 
 ---
 
-## 📄 License
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/your-feature`
+3. Commit with conventional messages: `git commit -m "feat: describe your change"`
+4. Push and open a pull request
+
+---
+
+## License
 
 MIT © [Saif ur Rahman](https://github.com/Saif8671)
+Free to use, modify, and distribute with attribution.
 
 ---
 
 <div align="center">
 
-Strong passwords aren't optional. Neither is knowing why. 🔐
+**Built by [Saif ur Rahman](https://github.com/Saif8671)**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Saif8671-100000?style=flat&logo=github)](https://github.com/Saif8671)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00C7B7?style=flat&logo=netlify)](https://saif-portfolio8671.netlify.app)
-[![Live Tool](https://img.shields.io/badge/Try_It_Live-password--scanner--tool.netlify.app-10b981?style=flat&logo=netlify)](https://password-scanner-tool.netlify.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Saif8671-100000?style=flat-square&logo=github)](https://github.com/Saif8671)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/saif-ur-rahman-0211002b9)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00C7B7?style=flat-square&logo=netlify)](https://saif-portfolio8671.netlify.app)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=flat-square&logo=gmail)](mailto:saifurrahman887@gmail.com)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:10b981,100:0d1117&height=100&section=footer" width="100%"/>
+<br/>
+
+*Strong passwords aren't optional. Neither is knowing why.*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:10b981,100:0d1117&height=120&section=footer" width="100%"/>
 
 </div>
